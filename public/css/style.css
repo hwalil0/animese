@@ -1,0 +1,222 @@
+.space{
+    height: 20px;
+}
+.space2{
+    height: 100px;
+}
+.video__img{
+    max-width: 198px;
+    background-color: #212121;
+    border-radius: 5px;
+    overflow: hidden;
+
+}
+.video__img__img{
+    min-width: 198px;
+    max-width: 198px;
+    max-height: 110px;
+    min-height: 110px;
+    border-radius: 5px;
+    margin: auto;
+    overflow: hidden;
+    
+}
+
+.video__text{
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+.video__user__avatar{
+    min-width: 75px;
+    max-width: 75px;
+    max-height: 75px;
+    min-height: 75px;
+    border-radius: 100%;
+    float: left;
+}
+
+.video__main{
+    position: relative ;
+    width: 100%;
+}
+  
+  form {
+    outline: 0;
+    float: left;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+  }
+  
+  form > .textbox {
+    outline: 0;
+    height: 42px;
+    width: 244px;
+    line-height: 42px;
+    padding: 0 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #212121;
+    border: 0;
+    float: left;
+    -webkit-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  form > .textbox:focus {
+    outline: 0;
+    background-color: #FFF;
+  }
+  
+  form > .button {
+    outline: 0;
+    background: none;
+    background-color: rgba(38, 50, 56, 0.8);
+    float: left;
+    height: 42px;
+    width: 42px;
+    text-align: center;
+    line-height: 42px;
+    border: 0;
+    color: #FFF;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 16px;
+    text-rendering: auto;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-transition: background-color .4s ease;
+    transition: background-color .4s ease;
+    -webkit-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  form > .button:hover {
+    background-color: rgba(0, 150, 136, 0.8);
+  }
+
+  .welcome{
+    height: 270px;
+    background-color:#343a40!important;
+}
+.welcome-cizgi{
+    height: 10px;
+    background-color: #40474e!important;
+
+}
+.avatar__pp{
+    border-radius: 100%;
+    max-width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.avatar__bosluk{
+    height: 30px;
+}
+.avatar__menu{
+    padding: 20px;
+    
+}
+.avatar__name{
+    text-align: center;
+}
+.avatar__max {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; 
+    overflow:hidden;    
+  }
+.user__avatar{
+    max-width: 250px;
+    min-width: 250px;
+    max-height: 250px;
+    min-height: 250px;
+    border-radius: 100%;
+    text-align: center;
+    padding: 10px;
+}
+.user__bosluk{
+    height: 130px;
+}
+.user__border{
+    min-width: 250px;
+    max-width: 250px;
+    background-color: #343a40!important;
+    border-radius: 100%;
+    float: left;
+}
+.user__name__area{
+    padding: 10px;
+}
+.user__area{
+    background-color: #40474e!important;
+    min-height: 400px;
+    width: 100%;
+    border-radius: 10px;
+}
+.user__area2{
+    height: 100px;
+    background-color: #40474e!important;
+}
+.user__bosluk{
+    height: 30px;
+}
+.user__body{
+    background-color: #343a40!important;
+    width: 75%;
+    height: auto;
+    position: relative;
+    border-radius: 10px;
+    margin: auto;
+}
+.user__hakkında{
+    background-color: #2e3236!important;
+    max-width: 60rem;
+    max-height: 300px;
+    min-width: 300px;
+    min-height: 100px;
+    border-radius: 10px;
+    padding: 10px;
+    word-wrap: break-word;
+    white-space: break-word; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+   
+
+}
+
+.gif__main{
+    width: 690px;
+    max-height: 1000px;
+    background-color: black;
+    align-items: center;
+    display:flex;
+    justify-content:center;
+    border-radius: 10px;
+}
+
+.gif__main__img{
+    max-height: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    background-color: red;
+    border-radius: 10px;
+}
+.gif__author{
+    border-radius: 10px;
+    min-height: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+
+}
+.gif__author__img{
+    max-width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    border-radius: 100%;
+    float: left;
+}

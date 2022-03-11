@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+<% include ./partials/login__nav %>
+
+<style>
+    .welcome {
+        background-image: url("<%- user.banner %>");
+        background-color: #cccccc;
+        max-height: 270px;
+        min-height: 270px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<div class="welcome" style="padding: 10px;">
+</div>
+
+<div class="welcome-cizgi"></div>
+
+<div class="user__bosluk"></div>
+
+<div class="container">
+    <div class="text-white user__area">
+        <div class="user__border" style="margin: 10px;"><img draggable="false" src='<%- user.avatar %>' class="user__avatar"></div>
+
+        <div class="user__name__area">
+            <a class="btn btn-outline-success" style="float: right; margin: 1px;" href="/edit/@me">Edit Your Profile</a>
+            <a class="btn btn-outline-danger" style="float: right; margin: 1px;" href="/upload/porn">Upload Porn</a>
+            <a class="btn btn-outline-danger" style="float: right; margin: 1px;" href="/upload/gif">Upload Gif</a>
+
+            <h2 class="user__name"><%- user.name %> (<%- user.yas %>)</h2>
+            <h3 class='user__name'>About:</h3>
+            <div class="row">
+            <div class="user__hakkında">
+                <h5><%- user.hakkında %></h5>
+            </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="user__bosluk"></div>
+</div>
+
+
+
+
+<% include ./partials/footer %>

@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+<% include ../partials/login__nav %>
+
+<div class="space"></div>
+<div class="container text-white">
+    <div class="row">
+        <div class="col-lg">
+            <div class="gif__main">
+                <img draggable="false" class="gif__main__img" src="<%- gif.img %>">
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="card bg-dark text-white gif__author">
+                <div class="card-body">
+                    <div>
+                        <img class="gif__author__img" draggable="false" src="<%- gif.author2[0].avatar %>">
+                    </div>
+                    <h3 class="text-white">
+                        &nbsp;<%- gif.author2[0].name %>
+                    </h3>
+                    <form action="/follow/<%- gif.author2[0]._id %>" method="POST">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Follow
+                        </button>
+                    </form>
+
+                    <br>
+                    <br>
+                    <br>
+                    <h5><%- gif.view %> Views • <%- bestdate %></h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="space"></div>

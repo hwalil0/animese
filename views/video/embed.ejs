@@ -1,0 +1,71 @@
+<style>
+    #player {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+
+    }
+
+    body {
+        background-color: black;
+    }
+</style>
+
+<video controls playsinline keyboard id="player" style="
+--plyr-video-control-background-hover: red;
+ --plyr-video-controls-background: transparent;
+ --plyr-color-main	: red;
+">
+    <source src="<%- video.url %>" type="video/mp4">
+    Your browser does not support HTML5 video.
+
+</video>
+
+
+<link rel="stylesheet" href="/player/plyr.css" />
+<script src="/player/plyr.js"></script>
+<script src="/player/plyr.polyfilled.js"></script>
+<script src="/player/plyr.js"></script>
+<script>
+    const player = new Plyr('#player');
+    player.source = {
+        type: 'video',
+        title: 'Example title',
+        sources: [
+            {
+                src: '<%- video.url %>',
+                type: 'video/mp4',
+                size: 360,
+            },
+            {
+                src: '<%- video.url %>',
+                type: 'video/mp4',
+                size: 480,
+            },
+            {
+                src: '<%- video.url %>',
+                type: 'video/mp4',
+                size: 720,
+            },
+            {
+                src: '<%- video.url %>',
+                type: 'video/webm',
+                size: 1080,
+            },
+            {
+                src: '<%- video.url %>',
+                type: 'video/webm',
+                size: 1440,
+            },
+            {
+                src: '<%- video.url %>',
+                type: 'video/webm',
+                size: 2160,
+            },
+        ],
+    };
+</script>

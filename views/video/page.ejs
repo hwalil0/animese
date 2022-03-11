@@ -1,0 +1,98 @@
+<% include ../partials/header %>
+<% include ../partials/login__nav %>
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark">
+        <div class="modal-body">
+            <div class="card card-body bg-dark text-white">
+                <h1 class="text-center mb-3">Report</h1>
+                <form action="/report/<%- video._id %>" method="POST">
+                    <div class="form-group">
+                        <label for="rwhy">Why Report</label>
+                        <textarea type="text" id="rwhy" name="rwhy" class="form-control" placeholder="Why" ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="about">About</label>
+                        <textarea type="text" id="about" name="about" class="form-control" placeholder="About" ></textarea>
+                    </div>
+                    <button type="submit" style="margin: 1px;" class="btn btn-primary btn-block">Save</button>
+                </form>
+                <button type="button" style="margin: 1px;" class="btn btn-secondary btn-block"
+                    data-dismiss="modal">Close</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="video__main">
+    <iframe src="http://localhost:5000/video/embed/<%- video._id %>" width="100%" height="480px"
+        frameborder="0"></iframe>
+</div>
+<div class="container">
+    <h2 class="text-white"><%- video.name %>
+        <% if(local_user.name == video.author2[0].name){ %>
+        <form style="float: right;">
+            <a href="/edit/video/<%- video._id %>" class="btn btn-primary btn-block">
+                Edit This Video
+            </a>
+        </form>
+        <% } %>
+        <button style="float: right;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop">
+            Report
+        </button>
+        <br>dsadsadsa
+        <h6 class="text-white"><%- video.view %> Views • <%- bestdate %></h6>
+    </h2>
+    <br>
+    <div class="text-white">
+        <img class="video__user__avatar" src="<%- video.author2[0].avatar %>">
+        <h4><%- video.author2[0].name %></h4>
+        <% if(local_user.name !== video.author2[0].name){ %>
+        <% if(local_user.follow.map(z => z._id).includes(video.author2[0]._id)){ %>
+        <form>
+            <button disabled class="btn btn-primary btn-block">
+                Followed
+            </button>
+        </form>
+        <% } else { %>
+        <form action="/follow/<%- video.author2[0]._id %>" method="POST">
+            <button onclick="change_text()"  type="submit" class="btn btn-primary btn-block">
+                <span id="follow">Follow</span>
+            </button>
+        </form>
+        <% } %>
+        <% }else{ %>
+
+        <% } %>
+
+
+    </div>
+    <br>
+
+    <hr>
+    <div class="recommend__main text-white">
+        <h4>Recommend for you</h4>
+        <div class="recommend__main">
+            <div class="row row-cols-1 row-cols-lg-5">
+                <% video2.forEach(function(v){ %>
+                <a href="/video/watch/<%- v._id %>" style="text-decoration:none">
+                    <div class="col-sm" type="button">
+                        <div class="video__img">
+                            <video muted loop class="video__img__img">
+                                <source
+                                    src="<%- v.url %>"
+                                    type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                            <div class="text-white video__text"> <span><%- v.name %> <br> <%- v.author2[0].name %> <span
+                                        style="float: right;">View: <%- v.view %></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+    <div class="space2"></div>
+</div>

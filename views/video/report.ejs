@@ -1,0 +1,17 @@
+
+<% include ../partials/header %>
+<div class="card card-body bg-dark text-white">
+    <h1 class="text-center mb-3">Report</h1>
+    <form action="/report/<%- video._id %>" method="POST">
+        <div class="form-group">
+            <label for="why">Why Report</label>
+            <textarea type="text" id="why" name="why" class="form-control" placeholder="Why"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="about">About</label>
+            <textarea type="text" id="about" name="about" class="form-control" placeholder="About"></textarea>
+        </div>
+        <button type="submit" style="margin: 1px;" class="btn btn-primary btn-block">Save</button>
+    </form>
+    <button type="button" style="margin: 1px;" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+</div>

@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+<style>
+    body {
+        background-color: black;
+    }
+
+    .bosluk {
+        height: 100px;
+    }
+
+    .bosluk2 {
+        height: 20px;
+    }
+</style>
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body bg-dark text-white">
+            <h1 class="text-center mb-3">Edit</h1>
+            <form action="/edit/video/<%- v._id %>" method="POST">
+                <div class="form-group">
+                    <label for="url">Video Url</label>
+                    <input type="url" id="url" name="v[url]" value="<%- v.url %>" class="form-control" placeholder="Video Url" />
+                </div>
+                <div class="form-group">
+                    <label for="name">Video Name</label>
+                    <input type="name" id="name" name="v[name]" value="<%- v.name %>" class="form-control" placeholder="Video Name" />
+                </div>
+                <div class="form-group">
+                    <label for="kanal_id">Categori Seç</label>
+                    <select class="custom-select" name="v[c]" id="c">
+                        <% categori.forEach(function(categori){ %>
+                        <option type="name" id="c" name="v[c]" value="<%- categori.name %>"><%- categori.name %>
+                        </option>
+                        <% }) %>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

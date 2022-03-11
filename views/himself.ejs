@@ -1,0 +1,78 @@
+<% include ./partials/header %>
+<style>
+  body{
+    background-color: black;
+  }
+  .bosluk{
+    height: 100px;
+  }
+  .bosluk2{
+    height: 20px;
+  }
+</style>    
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body bg-dark text-white">
+      <h1 class="text-center mb-3">Edit your profile</h1>
+      <% include ./partials/messages %>
+      <form action="/edit/@me" method="POST">
+        <div class="form-group">
+          <label for="name">Username</label>
+          <input
+            type="name"
+            id="name"
+            name="user[name]"
+            class="form-control"
+            placeholder="Username"
+            value="<%- user.name %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Avatar</label>
+          <input
+            type="name"
+            id="name"
+            name="user[avatar]"
+            class="form-control"
+            placeholder="Avatar Link"
+            value="<%- user.avatar %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Banner</label>
+          <input
+            type="name"
+            id="name"
+            name="user[banner]"
+            class="form-control"
+            placeholder="Banner Link"
+            value="<%- user.banner %>"
+          />
+        </div>
+        <div class="form-group">
+            <label for="hakkında">About</label>
+            <input
+              type="hakkında"
+              id="hakkında"
+              name="user[hakkında]"
+              class="form-control"
+              placeholder="About"
+              value="<%- user.hakkında %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="yas">Age</label>
+            <input
+              type="yas"
+              id="yas"
+              name="user[yas]"
+              class="form-control"
+              placeholder="Age"
+              value="<%- user.yas %>"
+            />
+          </div>
+        <button type="submit" class="btn btn-primary btn-block">Save</button>
+      </form>
+    </div>
+  </div>
+</div>

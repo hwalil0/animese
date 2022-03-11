@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+<% include ./partials/navbar %>
+
+<div class="space"></div>
+<div class="container text-white">
+  <h3>Most Viewed</h3>
+  <div class="row row-cols-1 row-cols-lg-5">
+    <% video2.forEach(function(v){ %>
+    <a href="/video/watch/<%- v._id %>" style="text-decoration:none">
+    <div class="col-sm" type="button">
+      <div class="video__img">
+        <video muted loop class="video__img__img">
+          <source src="<%- v.url %>"
+            type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <div class="text-white video__text"> <span><%- v.name %> <br> <%- v.author2[0].name %> <span
+          style="float: right;">View: <%- v.view %></span></span>
+    </div>
+      </div>
+    </div>
+  </a>
+    <% }); %>
+  </div>
+  <h3>New</h3>
+  <div class="row row-cols-1 row-cols-lg-5">
+    <% video.forEach(function(v){ %>
+    <a href="/video/watch/<%- v._id %>" style="text-decoration:none">
+    <div class="col-sm" type="button">
+      <div class="video__img">
+        <video muted loop class="video__img__img">
+          <source src="<%- v.url %>"
+            type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <div class="text-white video__text"> <span><%- v.name %> <br> <%- v.author2[0].name %> <span
+          style="float: right;">View: <%- v.view %></span></span>
+    </div>
+      </div>
+    </div>
+  </a>
+    <% }); %>
+</div>
+
+
+
+<% include ./partials/footer %>

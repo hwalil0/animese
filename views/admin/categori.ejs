@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+<% include ../partials/login__nav %>
+<% include ../partials/messages %>
+
+
+<div class="container text-white">
+    <h1>Hello Admin</h1>
+    <a href="/admin" type="button" class="btn btn-primary">Back</a>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+        Add Categori
+    </button>
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-dark">
+            <div class="modal-body">
+                <div class="card card-body bg-dark text-white">
+                    <h1 class="text-center mb-3">Add Categori</h1>
+                    <form action="/admin/add/categori" method="POST">
+                        <div class="form-group">
+                            <label for="name">Categori Name</label>
+                            <input type="name" id="name" name="name" class="form-control" placeholder="Categori Name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="img">Categori İmg</label>
+                            <input type="url" id="img" name="img" class="form-control" placeholder="Categori İmg" />
+                        </div>
+                        <button type="submit" style="margin: 1px;" class="btn btn-primary btn-block">Save</button>
+                    </form>
+                    <button type="button" style="margin: 1px;" class="btn btn-secondary btn-block"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="space"></div>
+    <ul class="list-group bg-dark">
+        <% categori.forEach(function(categori){ %>
+        <li class="list-group-item bg-dark">
+            <h3><%- categori.name %>
+                <a style="float: right; margin: 1px;" href="/admin/delete/categori/<%- categori._id %>" class="btn btn-danger">Delete</a>
+                <a style="float: right; margin: 1px;" href="/admin/edit/categori/<%- categori._id %>" class="btn btn-secondary">Edit</a>
+            </h3>
+        </li>
+        <% }) %>
+    </ul>
+
+</div>
+
+
+<% include ../partials/footer %>
